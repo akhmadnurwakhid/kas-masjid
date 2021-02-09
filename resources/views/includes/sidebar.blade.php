@@ -67,11 +67,13 @@
             <i class="fas fa-exchange-alt"></i>
             <span><b>Transaksi</b></span></a>
     </li>
+    @can('isAdminOrBendahara', App\Transaksi::class)
     <li class="nav-item">
         <a class="nav-link" href="{{route('transaksi.laporan')}}">
             <i class="fa fa-file"></i>
             <span><b>Laporan</b></span></a>
     </li>
+    @endcan
 
 
 

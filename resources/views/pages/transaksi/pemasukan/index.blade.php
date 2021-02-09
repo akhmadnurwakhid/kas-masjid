@@ -54,7 +54,9 @@
                             <th>Tanggal</th>
                             <th>Perincian</th>
                             <th>Jumlah (Rp)</th>
+                            @can('isAdminOrBendahara', App\Transaksi::class)
                             <th>Tindakan</th>
+                            @endcan
                         </tr>
                     </thead>
                     <tbody>
@@ -68,6 +70,7 @@
                                 <td>{{ $item->tanggal->isoFormat('D MMMM YYYY') }}</td>
                                 <td>{!! $item->perincian !!}</td>
                                 <td>{{ number_format($item->jumlah,2,',','.') }}</td>
+                                @can('isAdminOrBendahara', App\Transaksi::class)
                                 <td>
                                     <a class="btn btn-info btn-sm mb-1 mr-1 d-inline" href="{{route('transaksi.edit', $item->id)}}">
                                         <i class="fas fa-pencil-alt">
@@ -84,6 +87,7 @@
                                         </button>
                                     </form>
                                 </td>
+                                @endcan
                                 @php
                                     $total += $item->jumlah;
                                 @endphp

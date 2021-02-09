@@ -239,11 +239,13 @@ class TransaksiController extends Controller
 
     public function laporan()
     {
+        $this->authorize('isAdminOrBendahara', Transaksi::class);
         return view('pages.transaksi.laporan');
     }
 
     public function laporanPDF(LaporanTransaksiRequest $request)
     {
+        $this->authorize('isAdminOrBendahara', Transaksi::class);
         $kategori = $request->kategori;
         $tanggal_awal = date('d-m-Y',strtotime($request->tanggal_awal));
         $tanggal_akhir = date('d-m-Y',strtotime($request->tanggal_akhir));
