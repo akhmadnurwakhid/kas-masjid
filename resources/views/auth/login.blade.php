@@ -37,14 +37,13 @@
                             <img class="col-lg-6 d-none d-lg-block" src="{{asset('img/bg-login-image.jpg')}}" alt="">
                             <div class="col-lg-6">
                                 <div class="px-5 pt-5">
-                                    <h1 class="h5 text-gray-800 text-lg">
-                                        <i class="fas fa-mosque"></i>
-                                        <b>KAS Masjid</b>
+                                    <h1 class="h5 text-gray-800 text-lg font-weight-bold font-italic">
+                                        KAS Masjid
                                     </h1>
                                 </div>
-                                <div class="p-5">
+                                <div class="px-5 pt-4">
                                     <div class="text-left mb-4">
-                                        <h1 class="h4 text-gray">Selamat datang,</h1>
+                                        <h1 class="h5 text-gray">Assalamulaikum,</h1>
                                         <h1 class="h5 text-gray">Silahkan masuk untuk melanjutkan.</h1>
                                     </div>
                                     <form class="user" action="{{route('post-login')}}" method="POST">
@@ -79,7 +78,7 @@
                                     </form>
 
                                     <div class="text-center">
-                                        <h1 class="h5 text-gray-900 mt-4 mb-1 font-weight-bold">Masjid {{ App\Masjid::first()->nama }}</h1>
+                                        <h1 class="h5 text-gray-900 mt-4 mb-1 font-weight-bold"><i class="fas fa-mosque"></i> Masjid {{ App\Masjid::first()->nama }}</h1>
                                         <h1 class="h6 text-gray-900 mb-4 font-italic">{{ App\Masjid::first()->alamat }}</h1>
                                     </div>
                                 </div>
